@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img-changer{
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+        .img-changer>img{
+            width: 500px;
+            height: 500px;
+        }
+        #buttons>button{
+            font-size: 25px;
+            font-weight: bolder;
+            margin: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+   <div class="img-changer">
+    <img src="" alt="">
+    <div id="buttons">
+        
+    </div>
+   </div>
+</body>
+</html>
+<script>
+    let imageArr = [
+        "https://ca.slack-edge.com/T04K6GB334K-U04L17RE9RR-70dd11603f9d-512",
+        "https://ca.slack-edge.com/T04K6GB334K-U04KY6AEKN2-37907e481ccc-512",
+        "https://ca.slack-edge.com/T04K6GB334K-U04KYCK4VHT-08ab7d7a9be4-512",
+        "https://ca.slack-edge.com/T04K6GB334K-U04LHGH7GJG-73600327857c-512",
+        "https://ca.slack-edge.com/T04K6GB334K-U04KXB5A6PP-130246adf4b0-512",
+        "https://ca.slack-edge.com/T04K6GB334K-U04L2CP1VDZ-92d01dbbaa6f-512",
+        "https://ca.slack-edge.com/T04K6GB334K-U04L2Q465HS-80ed62506944-512",
+        "https://ca.slack-edge.com/T04K6GB334K-U04KXAX2XE1-0ba21dba85e3-512",
+        "https://ca.slack-edge.com/T04K6GB334K-U04LCT69E8Z-911c0457ce04-512",
+        "https://ca.slack-edge.com/T04K6GB334K-U04L1PZ73B9-b39734d606a6-512",
+        "https://ca.slack-edge.com/T04K6GB334K-U04L41XKN7N-9ece2225bf98-512",
+        "https://ca.slack-edge.com/T04K6GB334K-U04LQ05L448-cd6c76fd257e-512",
+
+
+
+    ]
+   
+    document.querySelector("img").setAttribute("src",imageArr[1])
+
+let line = 0;
+
+  let myPromise = new Promise(function(res,rej){
+    setTimeout(()=>{
+        console.log("Promise resolved")
+        res()
+    },3000)
+  })
+  console.log(myPromise)
+  myPromise.then(()=>{
+    setInterval(function(){
+        if(line == imageArr.length){
+          
+            line=0;
+        }
+    document.querySelector("img").setAttribute("src",imageArr[line++])
+   },2000)
+  
+  })
+</script>

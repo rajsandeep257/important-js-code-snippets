@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btns{
+            width: 75%;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            margin: auto;
+        }
+        #btns>button{
+            width: 30%;
+            height: 48px;
+            font-size: 24px;
+            margin: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let mainDiv = document.createElement("div")
+    mainDiv.setAttribute("id","btns")
+    for(i=1;i<=9;i++){
+        let mainButton = document.createElement("button")
+        mainButton.innerHTML=i;
+        mainButton.setAttribute("id","btn"+i)
+        mainDiv.append(mainButton)
+    }
+    document.body.appendChild(mainDiv)
+
+
+    document.getElementById("btn5").addEventListener("click",rotatefunction);
+  
+    
+    function rotatefunction(){
+    let button1=document.getElementById("btn1").innerHTML;
+    let button2=document.getElementById("btn2").innerHTML;
+    let button3=document.getElementById("btn3").innerHTML;
+    let button4=document.getElementById("btn4").innerHTML;
+    let button6=document.getElementById("btn6").innerHTML;
+    let button7=document.getElementById("btn7").innerHTML;
+    let button8=document.getElementById("btn8").innerHTML;
+    let button9=document.getElementById("btn9").innerHTML;
+    document.getElementById("btn1").innerHTML=button4;
+    document.getElementById("btn2").innerHTML=button1;
+    document.getElementById("btn3").innerHTML=button2;
+    document.getElementById("btn4").innerHTML=button7;
+    document.getElementById("btn6").innerHTML=button3;
+    document.getElementById("btn7").innerHTML=button8;
+    document.getElementById("btn8").innerHTML=button9;
+    document.getElementById("btn9").innerHTML=button6;
+    }
+</script>

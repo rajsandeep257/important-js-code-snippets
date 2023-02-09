@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Promise Status</h1>
+    <h1 id="h1tag"></h1>
+    <h1
+    id="2nd"></h1>
+</body>
+</html>
+<script>
+    let x  =  Math.floor(Math.random()*1000)
+    console.log(x)
+    let myPromise = new Promise((res,rej)=>{
+       setTimeout(()=>{
+        if(x%2==0){
+            res()
+        }
+        else{
+            rej()
+        }
+       },3000)
+    })
+    myPromise.then(()=>{
+        document.getElementById("h1tag").innerText="Successful"
+        document.getElementById("2nd").innerText="😁"
+        document.getElementById("h1tag").style.color="green"
+    })
+    .catch(()=>{
+        document.getElementById("h1tag").innerText="Unuccessful"
+        document.getElementById("2nd").innerText="😢"
+        document.getElementById("h1tag").style.color="red"
+    })
+</script>
